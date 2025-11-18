@@ -3,42 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistema de agenda | CRUD</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <button class="botao-modal" onclick="gerenciarModal('abrir')">Adicionar Novo Contato</button>
+        <div class="header">
+            <h1 class="titulo-header">Controle de agenda</h1>
+            <button class="botao-modal" onclick="gerenciarModal('abrir')">Novo Contato</button>
+        </div>
+
+        <div class="tabela">
+            <table id="tabela-dados">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>  
+                        <th>Email</th>     
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+        </table>
+        </div>
 
         <div id="janela-modal" class="janela-modal">
             <div class="modal-conteudo">
                 <button class="fechar" id="fechar" onclick="gerenciarModal('fechar')">X</button>
-
                 <form id="form-contato">
                     <input class="input" type="text" id="nome" name="nome" placeholder="Nome" required>
-
                     <input class="input" type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
-
                     <input class="input" type="email" id="email" name="email" placeholder="Email" required>
-
                     <button class="inserir" onclick="inserir(event)">Inserir</button>
-                    
                 </form>
             </div>
         </div>
 
-        <table id="tabela-dados">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Telefone</th>  
-                    <th>Email</th>     
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        
 
     </div>
 
