@@ -1,16 +1,5 @@
 let i = 0;
 
-function gerenciarModal(acao) {
-    const modal = document.getElementById('janela-modal');
-    
-    if (acao === 'abrir') {
-        modal.classList.add('abrir');
-    } else if (acao === 'fechar') {
-        modal.classList.remove('abrir');
-        document.getElementById('form-contato').reset(); 
-    }
-}
-
 function inserir(event){
     event.preventDefault();
 
@@ -19,7 +8,6 @@ function inserir(event){
     let email = document.getElementById('email');
 
     let tabela = document.getElementById('tabela-dados');
-    const modal = document.getElementById('janela-modal');
 
     i++;
 
@@ -47,7 +35,6 @@ function inserir(event){
     tel.value = "";
     email.value = "";
 
-    gerenciarModal('fechar');
 }
 
 function apagar(indice){

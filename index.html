@@ -10,8 +10,14 @@
     <div class="container">
         <div class="header">
             <h1 class="titulo-header">Controle de agenda</h1>
-            <button class="botao-modal" onclick="gerenciarModal('abrir')">Novo Contato</button>
+            <form id="form-contato">
+                <input class="input" type="text" id="nome" name="nome" placeholder="Nome" required>
+                <input class="input" type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
+                <input class="input" type="email" id="email" name="email" placeholder="Email" required>
+                <button class="inserir" onclick="inserir(event)">Inserir</button>
+            </form>
         </div>
+
 
         <div class="tabela">
             <table id="tabela-dados">
@@ -27,21 +33,7 @@
                 </tbody>
         </table>
         </div>
-
-        <div id="janela-modal" class="janela-modal">
-            <div class="modal-conteudo">
-                <button class="fechar" id="fechar" onclick="gerenciarModal('fechar')">X</button>
-                <form id="form-contato">
-                    <input class="input" type="text" id="nome" name="nome" placeholder="Nome" required>
-                    <input class="input" type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
-                    <input class="input" type="email" id="email" name="email" placeholder="Email" required>
-                    <button class="inserir" onclick="inserir(event)">Inserir</button>
-                </form>
-            </div>
-        </div>
-
         
-
     </div>
 
     <script src="script.js"></script>
