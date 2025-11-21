@@ -20,43 +20,6 @@
     display: flex;
 }
 
-.botao-modal {
-    min-width: 7%;
-    min-height: 40%;
-    background-color: #357DED;
-    border-radius: 10px;
-    color: white;
-    border: 0px;
-}
-
-.janela-modal {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.164);
-}
-
-.janela-modal.abrir {
-    display: flex;
-}
-
-.modal-conteudo {
-    width: 70%;
-    height: 50%;
-    background-color: #357DED;
-    border-radius: 50px 0px 50px 50px;
-    backdrop-filter: blur(10px);
-    padding: 5%;
-    display: flex;
-    justify-content: center;
-}
-
 .fechar {
     position: absolute;
     top: -5px;
@@ -79,6 +42,7 @@
     border-radius: 10px;
     outline: none;
     background-color: #f8fafc;
+    border-color: #9b9b9b;
     color: #0d0c22;
 }
 
@@ -91,7 +55,6 @@ th, tbody {
     padding: 15px 150px;
     text-align: center;
 }
-
 
 thead {
     background-color: #f1f1f1;

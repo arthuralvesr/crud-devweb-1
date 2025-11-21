@@ -1,5 +1,75 @@
 let i = 0;
 
+const maskOptions = {
+    mask: [
+        { mask: '(00) 0000-0000' },  // fixo
+        { mask: '(00) 00000-0000' }  // celular
+    ]
+};
+IMask(document.getElementById('telefone'), maskOptions);
+
+function validarNome(nome) {
+    const regex = /^[A-Za-z\s]+$/; 
+    let campo = document.getElementById('nome');
+
+
+    if (regex.test(nome) && nome.length > 2) {
+ 
+        return true;
+    } else {
+        // alert("O campo Nome deve conter um nome valido com mais de 2 letras.");
+        campo.style.backgroundColor = "#e9a1a1ff";
+        campo.style.borderColor = "red";
+
+        return false;
+    }
+}
+
+function validarEmail(email) {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+    let campo = document.getElementById('email');
+
+    if(regex.test(email)) {
+        return true;
+    } else {
+        alert("O campo Email deve conter um email valido.");
+        campo.style.backgroundColor = "#e9a1a1ff";
+        campo.style.borderColor = "red";
+
+        return false;
+    }
+}
+
+function validarTelefone(tel) {
+    const regex = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/; 
+    let campo = document.getElementById('telefone');
+
+    if(regex.test(tel)) {
+
+        return true;
+    } else {
+        alert("O campo Telefone deve conter um número valido.");
+        campo.style.backgroundColor = "#e9a1a1ff";
+        campo.style.borderColor = "red";
+
+        return false;
+    }
+}
+
+
+function validarDados(nome, tel, email) {
+
+    const nomePassou = validarNome(nome); 
+    const telPassou = validarTelefone(tel);
+    const emailPassou = validarEmail(email);
+
+    if (!nomePassou || !telPassou || !emailPassou) {
+        return false; 
+    } 
+
+    return true;
+}
+
 function inserir(event){
     event.preventDefault();
 
@@ -9,9 +79,12 @@ function inserir(event){
 
     let tabela = document.getElementById('tabela-dados');
 
-    i++;
+    if(validarDados(nome.value, tel.value, email.value)){
 
-    let linha = '<tr id="linha_' + i + '">' +
+        i++;
+        
+        let linha = '<tr id="linha_' + i + '">' +
+        
         '<td id="c'+i+'1">' + nome.value + '</td>' + 
         '<td id="c'+i+'2">' + tel.value + '</td>' +   
         '<td id="c'+i+'3">' + email.value + '</td>' + 
@@ -27,13 +100,23 @@ function inserir(event){
                 '</svg>' +
             '</button>' +
         '</td>' +
+        
         '</tr>';
+        
+        tabela.innerHTML = tabela.innerHTML + linha;
+ 
+        nome.value = "";
+        tel.value = "";
+        email.value = "";
 
-    tabela.innerHTML = tabela.innerHTML + linha;
+        nome.style.backgroundColor = "#f8fafc";
+        nome.style.borderColor = "#9b9b9b";
+        tel.style.backgroundColor = "#f8fafc"; 
+        tel.style.borderColor = "#9b9b9b";
+        email.style.backgroundColor = "#f8fafc";
+        email.style.borderColor = "#9b9b9b";
+    }
 
-    nome.value = "";
-    tel.value = "";
-    email.value = "";
 
 }
 
