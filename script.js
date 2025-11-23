@@ -17,7 +17,7 @@ function validarNome(nome) {
  
         return true;
     } else {
-        // alert("O campo Nome deve conter um nome valido com mais de 2 letras.");
+        alert("O campo Nome deve conter mais de 2 letras.");
         campo.style.backgroundColor = "#e9a1a1ff";
         campo.style.borderColor = "red";
 

@@ -65,6 +65,16 @@
     color: #404656;
 }
 
+.input-edit {
+    width: 250px;
+    height: 35px;
+    padding-left: 15px;
+    border: none;
+    border-radius: 0.5rem;
+    border: 1px solid #404656;
+    color: #404656;
+}
+
 .input#email {
     width: 250px;
 
@@ -104,8 +114,7 @@ th, tbody {
 
 td {
     padding: 5px 0px;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
 }
 
 thead {
@@ -120,10 +129,11 @@ table {
 .botoes-acao {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
 }
 
-.btn-editar, .btn-apagar {
+.btn-editar, .btn-apagar, .btn-cancelar, .btn-salvar {
     display: flex; 
     justify-content: center;
     align-items: center; 
@@ -140,4 +150,12 @@ table {
 
 .btn-apagar {
     background-color: #ee4b2b;
+}
+
+.btn-salvar {
+    background-color: #49af5b;
+}
+
+.btn-cancelar {
+    background-color: #ee4b2b; 
 }
